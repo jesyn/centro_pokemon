@@ -15,7 +15,7 @@ export const initialState = {
 
 export const formularioReducer = (state, action) => {
     console.log(action);
-    switch (action.type) {
+    /* switch (action.type) {
         case 'update_nombre':
             return {
                 ...state,
@@ -58,6 +58,21 @@ export const formularioReducer = (state, action) => {
             };
         case 'RESET':
             return initialState;
+        default:
+            return state;
+    } */
+    switch (action.type) {
+        case 'actualizar_entrenador':
+            return {
+                ...state,
+                entrenador: { ...state.entrenador, ...action.payload },
+            };
+
+        case 'actualizar_pokemon':
+            return {
+                ...state,
+                pokemon: { ...state.pokemon, ...action.payload },
+            };
         default:
             return state;
     }
