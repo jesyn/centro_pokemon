@@ -1,6 +1,6 @@
-// Aqui debemos crear nuestro contexto y nuestro provider.
 import { createContext, useReducer } from 'react';
 import { formularioReducer, initialState } from '../components/hooks/reducer';
+import PropTypes from 'prop-types';
 
 export const FormContext = createContext();
 
@@ -12,4 +12,8 @@ export const FormProvider = ({ children }) => {
             {children}
         </FormContext.Provider>
     );
+};
+
+FormProvider.propTypes = {
+    children: PropTypes.element.isRequired,
 };
