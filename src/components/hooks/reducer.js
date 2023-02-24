@@ -1,66 +1,51 @@
+//@ts-check
+
+/**
+ * @typedef {object} entrenador
+ * @property {string} nombre
+ * @property {string} apellido
+ * @property {string} email
+ */
+
+/**
+ * @typedef {object} pokemon
+ * @property {string} nombre
+ * @property {string} tipo
+ * @property {string} elemento
+ * @property {number} altura
+ * @property {number} edad
+ */
+
 export const initialState = {
+    /**
+     * @type {entrenador}
+     */
     entrenador: {
         nombre: '',
         apellido: '',
         email: '',
     },
+    /**
+     * @type {pokemon}
+     */
     pokemon: {
         nombre: '',
         tipo: '',
         elemento: '',
-        altura: '',
-        edad: '',
+        altura: 0,
+        edad: 0,
     },
 };
 
+/**
+ * funcion para actualizar el estado del entrenador y pokemon
+ * @param {object} state recibe el estado inicial
+ * @param {object} action recibe la accion para modificar el estado
+ * @returns {object}
+ */
+
 export const formularioReducer = (state, action) => {
     console.log(action);
-    /* switch (action.type) {
-        case 'update_nombre':
-            return {
-                ...state,
-                entrenador: { ...state.entrenador, nombre: action.payload },
-            };
-        case 'update_apellido':
-            return {
-                ...state,
-                entrenador: { ...state.entrenador, apellido: action.payload },
-            };
-        case 'update_email':
-            return {
-                ...state,
-                entrenador: { ...state.entrenador, email: action.payload },
-            };
-        case 'update_nombrePokemon':
-            return {
-                ...state,
-                pokemon: { ...state.pokemon, nombre: action.payload },
-            };
-        case 'update_tipoPokemon':
-            return {
-                ...state,
-                pokemon: { ...state.pokemon, tipo: action.payload },
-            };
-        case 'update_elementoPokemon':
-            return {
-                ...state,
-                pokemon: { ...state.pokemon, elemento: action.payload },
-            };
-        case 'update_alturaPokemon':
-            return {
-                ...state,
-                pokemon: { ...state.pokemon, altura: action.payload },
-            };
-        case 'update_edadPokemon':
-            return {
-                ...state,
-                pokemon: { ...state.pokemon, edad: action.payload },
-            };
-        case 'RESET':
-            return initialState;
-        default:
-            return state;
-    } */
     switch (action.type) {
         case 'actualizar_entrenador':
             return {

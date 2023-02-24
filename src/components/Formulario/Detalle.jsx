@@ -4,6 +4,7 @@ import { FormContext } from '../../context/ContextoFormulario';
 const Detalle = () => {
     const [store, dispatch] = useContext(FormContext);
     console.log({ store });
+
     return (
         <div className='detalle-formulario'>
             <div className='encabezado'>
