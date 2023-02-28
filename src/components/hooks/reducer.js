@@ -1,6 +1,12 @@
 //@ts-check
 
 /**
+ * @typedef {object} estado_incial
+ * @property {entrenador | undefined}  entrenador
+ * @property {pokemon | undefined} pokemon
+ */
+
+/**
  * @typedef {object} entrenador
  * @property {string} nombre
  * @property {string} apellido
@@ -14,6 +20,12 @@
  * @property {string} elemento
  * @property {number} altura
  * @property {number} edad
+ */
+
+/**
+ * @typedef {object} accion
+ * @property {string} type
+ * @property {object} payload
  */
 
 export const initialState = {
@@ -39,9 +51,9 @@ export const initialState = {
 
 /**
  * funcion para actualizar el estado del entrenador y pokemon
- * @param {object} state recibe el estado inicial
- * @param {object} action recibe la accion para modificar el estado
- * @returns {object}
+ * @param {estado_incial} state recibe el estado inicial
+ * @param {accion} action recibe la accion para modificar el estado
+ * @returns {estado_incial}
  */
 
 export const formularioReducer = (state, action) => {

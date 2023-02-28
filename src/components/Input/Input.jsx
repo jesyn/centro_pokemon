@@ -7,10 +7,19 @@ const Input = ({ name, label, type = 'text', isEntrenador }) => {
 
     const [store, dispatch] = useContext(FormContext);
 
+    /**
+     * @description funcion para actualizar el estado local del input
+     * @param {InputEvent} e
+     */
     const onChange = (e) => {
         setValue(e.target.value);
     };
 
+    /**
+     *@description funcion que se ejecuta cuando el input pierde el foco, enviando el valor del input al
+     * contexto que el luego utilizado por el componente Detalle.
+     * @param {InputEvent} e
+     */
     const onBlur = (e) => {
         e.preventDefault();
         dispatch({
