@@ -15,11 +15,11 @@
 
 /**
  * @typedef {object} pokemon
- * @property {string} nombre
- * @property {string} tipo
- * @property {string} elemento
- * @property {number} altura
- * @property {number} edad
+ * @property {string} nombrePokemon
+ * @property {string} tipoPokemon
+ * @property {string} elementoPokemon
+ * @property {number} alturaPokemon
+ * @property {number} edadPokemon
  */
 
 /**
@@ -41,11 +41,11 @@ export const initialState = {
      * @type {pokemon}
      */
     pokemon: {
-        nombre: '',
-        tipo: '',
-        elemento: '',
-        altura: 0,
-        edad: 0,
+        nombrePokemon: '',
+        tipoPokemon: '',
+        elementoPokemon: '',
+        alturaPokemon: 0,
+        edadPokemon: 0,
     },
 };
 
@@ -57,7 +57,7 @@ export const initialState = {
  */
 
 export const formularioReducer = (state, action) => {
-    console.log(action);
+    //console.log(action);
     switch (action.type) {
         case 'actualizar_entrenador':
             return {

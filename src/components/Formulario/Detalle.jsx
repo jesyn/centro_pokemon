@@ -1,9 +1,23 @@
 import React, { useContext } from 'react';
 import { FormContext } from '../../context/ContextoFormulario';
+import { useMutation } from 'react-query';
+import { ingresarPokemon } from '../../api';
 
 const Detalle = () => {
     const [store, dispatch] = useContext(FormContext);
-    console.log({ store });
+    //console.log({ store });
+
+    const { mutate, isLoading, isSuccess, data, reset } =
+        useMutation(ingresarPokemon);
+
+    const handleSubmit = () => {
+        //event.preventDefault();
+
+        mutate({
+            name: store.entrenador.nombre,
+            //text: event.target.elements.text.value,
+        });
+    };
 
     return (
         <div className='detalle-formulario'>
@@ -31,8 +45,9 @@ const Detalle = () => {
             <button
                 className='boton-enviar'
                 onClick={() => {
-                    alert('Solicitud enviada :)');
+                    //alert('Solicitud enviada :)');
                     dispatch({ type: 'RESET' });
+                    handleSubmit();
                 }}
             >
                 Enviar Solicitud

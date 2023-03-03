@@ -1,0 +1,21 @@
+{"pokemon": [
+    {
+    "entrenador": {
+        "id": 1,
+        "apellido": "",
+        "email": "",
+        "nombre": ""
+    }
+    },
+    {
+    "pokemon": {
+        "id": 1,
+        "nombrePokemon": "",
+        "tipoPokemon": "",
+        "elementoPokemon": "",
+        "alturaPokemon": "",
+        "edadPokemon": ""
+        }
+    }
+    ]
+}

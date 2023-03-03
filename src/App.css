@@ -107,8 +107,8 @@ h1 {
   padding: 1rem;
   width: 300px;
   border-radius: 10px;
-  border-style: solid;
   margin-left: 1rem;
+  border: 1px solid black;
 }
 
 .formulario-ingreso .cuerpo-formulario {
@@ -138,7 +138,7 @@ h1 {
   color: whitesmoke;
 }
 
-.cuerpo-formulario .inputs , .cuerpo-formulario select{
+.cuerpo-formulario .inputs /* , .cuerpo-formulario select */{
   width: 40%;
   margin-left: 2rem;
 }

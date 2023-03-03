@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { getType } from './../hooks/getType';
+import { FormContext } from '../../context/ContextoFormulario';
 import { useQuery } from 'react-query';
+import PropTypes from 'prop-types';
 
-function Select() {
-    const query = useQuery('getCharacters', getType);
+function Select({ name, label, isEntrenador }) {
+    const [store, dispatch] = useContext(FormContext);
+    const query = useQuery('gettype', getType, {
+        //retry: false,
+    });
+    const { isLoading, isError, isSuccess, data } = query;
 
-    const { isLoading, isError, error, data } = query;
+    //console.log(isError);
 
-    console.log(data?.results);
-    console.log(isError);
+    const onBlur = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: isEntrenador ? 'actualizar_entrenador' : 'actualizar_pokemon',
+            payload: { [e.target.name]: e.target.value },
+        });
+    };
 
     return (
         <div className='input-contenedor'>
-            <label> Tipo </label>
-            <select name='select' disabled={isError}>
+            <label htmlFor={name}> {label} </label>
+            <select name={name} disabled={!isSuccess} onBlur={onBlur}>
                 {data &&
                     !isLoading &&
                     data?.results.map((item, index) => (
@@ -25,5 +36,11 @@ function Select() {
         </div>
     );
 }
+
+Select.propTypes = {
+    name: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    isEntrenador: PropTypes.bool,
+};
 
 export default Select;
