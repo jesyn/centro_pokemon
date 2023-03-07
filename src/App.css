@@ -17,9 +17,14 @@ body {
   letter-spacing: 4px;
 }
 
+select {
+  background-color: white;
+}
+
 .App {
   text-align: center;
   height: 100vh;
+  padding-bottom: 20rem;
 }
 
 a {
@@ -93,6 +98,7 @@ h1 {
   /* height: 100%; */
   padding-bottom: 3rem;
   margin-top: 2rem;
+  margin-bottom: 3rem;
 }
 
 .input-contenedor {
@@ -101,21 +107,27 @@ h1 {
   justify-content: space-between;
   margin-top: 2rem;
   width: 100%;
+  position: relative;
 }
 
-.input-contenedor input,  .input-contenedor select {
+.input-contenedor input,
+.input-contenedor select,
+.boton-seleccionar-especies {
   padding: 1rem;
   width: 300px;
   border-radius: 10px;
+  border-style: solid;
   margin-left: 1rem;
-  border: 1px solid black;
+}
+
+.input-contenedor select,
+.boton-seleccionar-especies {
+  width: 338px;
 }
 
 .formulario-ingreso .cuerpo-formulario {
   display: flex;
   flex-direction: row;
-  /* height: 90%; */
-  
 }
 
 .formulario-ingreso h3 {
@@ -138,7 +150,7 @@ h1 {
   color: whitesmoke;
 }
 
-.cuerpo-formulario .inputs /* , .cuerpo-formulario select */{
+.cuerpo-formulario .inputs {
   width: 40%;
   margin-left: 2rem;
 }
@@ -209,4 +221,80 @@ h1 {
 
 .volver {
   justify-self: end;
+}
+
+.popup-especie {
+  width: 100%;
+  /* height: 60vh; */
+  position: absolute;
+  /* top: 100%; */
+  bottom: 40%;
+  left: 80%;
+  /* transform: translate(-50%, -50%); */
+  background-color: whitesmoke;
+  border-radius: 12px;
+  border: 2px solid lightgrey;
+  box-shadow: 3px 3px 3px 3px darkgrey;
+}
+
+.contenedor-especies {
+  width: 100%;
+  /* margin-top: 3rem; */
+}
+
+.boton-seleccionar-especies {
+  background-color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.boton-seleccionar-especies:hover {
+  background-color: lightgray;
+}
+
+.botones-especie {
+  margin: 0.5rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  background-color: #ed5564;
+  color: whitesmoke;
+  cursor: pointer;
+  border: 2px solid #ed5564;
+  box-shadow: 2px 2px 2px 2px darkgray;
+}
+
+.botones-especie:hover {
+  box-shadow: none;
+}
+
+.paginador {
+  /* position: absolute; */
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.boton-anterior,
+.boton-siguiente {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: whitesmoke;
+  color: #ed5564;
+  cursor: pointer;
+  border: 2px solid #ed5564;
+  box-shadow: 2px 2px 2px 2px darkgray;
+}
+
+.boton-anterior:hover,
+.boton-siguiente:hover {
+  background-color: #ed5564;
+  color: whitesmoke;
+  box-shadow: none;
+}
+
+.boton-anterior {
+  margin-right: 2rem;
 }

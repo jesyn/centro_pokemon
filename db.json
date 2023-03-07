@@ -1,21 +1,52 @@
-{"pokemon": [
+{
+  "pokemon": [
     {
-    "entrenador": {
-        "id": 1,
+      "id": 1,
+      "entrenador": {
         "apellido": "",
         "email": "",
         "nombre": ""
-    }
+      }
     },
     {
-    "pokemon": {
-        "id": 1,
+      "pokemon": {
         "nombrePokemon": "",
         "tipoPokemon": "",
         "elementoPokemon": "",
         "alturaPokemon": "",
         "edadPokemon": ""
-        }
+      }
+    },
+    {
+      "entrenador": {
+        "nombre": "jes",
+        "apellido": "dfad",
+        "email": "dfaf"
+      },
+      "pokemon": {
+        "nombrePokemon": "pikachu",
+        "tipoPokemon": "ice",
+        "elementoPokemon": "dfad",
+        "alturaPokemon": "0",
+        "edadPokemon": "-1"
+      },
+      "id": 2
+    },
+    {
+      "entrenador": {
+        "nombre": "jesy",
+        "apellido": "mun",
+        "email": "jesyandrea@hotmail.com"
+      },
+      "pokemon": {
+        "nombrePokemon": "pikachu",
+        "tipoPokemon": "flying",
+        "elementoPokemon": "rayo",
+        "alturaPokemon": "1",
+        "edadPokemon": "2",
+        "nombreEspecie": "ivysaur"
+      },
+      "id": 3
     }
-    ]
+  ]
 }

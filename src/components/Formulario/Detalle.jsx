@@ -1,23 +1,27 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { FormContext } from '../../context/ContextoFormulario';
 import { useMutation } from 'react-query';
-import { ingresarPokemon } from '../../api';
+import { ingresarPokemon } from '../hooks/api';
 
 const Detalle = () => {
     const [store, dispatch] = useContext(FormContext);
     //console.log({ store });
 
-    const { mutate, isLoading, isSuccess, data, reset } =
+    const { mutate, isLoading, isSuccess, data, isError } =
         useMutation(ingresarPokemon);
 
-    const handleSubmit = () => {
-        //event.preventDefault();
-
-        mutate({
-            name: store.entrenador.nombre,
-            //text: event.target.elements.text.value,
-        });
-    };
+    // Utilizamos un useEffect para que se ejecute una vez realiza la mutación y mostrar el mensaje de éxito o error.
+    useEffect(() => {
+        if (isSuccess) {
+            alert(
+                `Formulario enviado correctamente, id ${data ? data?.id : ''}`
+            );
+        } else if (isError) {
+            alert(
+                'Error al enviar el formulario. Por favor intente nuevamente'
+            );
+        }
+    }, [isSuccess, data, isError]);
 
     return (
         <div className='detalle-formulario'>
@@ -40,17 +44,17 @@ const Detalle = () => {
                     <p>Elemento: {store.pokemon?.elementoPokemon} </p>
                     <p>Altura: {store.pokemon?.alturaPokemon} </p>
                     <p>Edad: {store.pokemon?.edadPokemon} </p>
+                    <p>Especie: {store.pokemon?.nombreEspecie} </p>
                 </div>
             </section>
             <button
                 className='boton-enviar'
                 onClick={() => {
-                    //alert('Solicitud enviada :)');
                     dispatch({ type: 'RESET' });
-                    handleSubmit();
+                    mutate(store);
                 }}
             >
-                Enviar Solicitud
+                {isLoading ? 'enviando ...' : 'Enviar Solicitud'}
             </button>
         </div>
     );

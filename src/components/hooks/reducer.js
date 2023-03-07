@@ -20,6 +20,7 @@
  * @property {string} elementoPokemon
  * @property {number} alturaPokemon
  * @property {number} edadPokemon
+ * @property {string} especiePokemon
  */
 
 /**
@@ -46,6 +47,7 @@ export const initialState = {
         elementoPokemon: '',
         alturaPokemon: 0,
         edadPokemon: 0,
+        especiePokemon: '',
     },
 };
 
