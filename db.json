@@ -47,6 +47,23 @@
         "nombreEspecie": "ivysaur"
       },
       "id": 3
+    },
+    {
+      "entrenador": {
+        "nombre": "Jesica",
+        "apellido": "Muñoz",
+        "email": "jesyandrea@hotmail.com"
+      },
+      "pokemon": {
+        "nombrePokemon": "pikachu",
+        "tipoPokemon": "dragon",
+        "elementoPokemon": "rayo",
+        "alturaPokemon": "1",
+        "edadPokemon": "-1",
+        "especiePokemon": "",
+        "nombreEspecie": "beedrill"
+      },
+      "id": 4
     }
   ]
 }
