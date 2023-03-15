@@ -39,16 +39,5 @@ Puedes iniciar el json server para guarda la información del formulario en un j
 ```
 npm run server
 ```
+Ahora, tu servidor se encontrará corriendo en la siguiente url: [http://localhost:4000](http://localhost:4000).
 
-## Primeros pasos
-
-Recuerda que el objetivo de esta clase es que puedas agregar la lógica necesaria para implementar:
-
--   Un estado local, que te permita controlar el valor de cada input, y
--   Un estado global, para poder compartir el valor de los inputs con el formulario
-    de vista previa.
-
-A lo largo del código, encontrarás algunos comentarios y sugerencias que te orientarán
-acerca de los pasos necesarios para completar la actividad.
-
-¡Manos a la obra!
